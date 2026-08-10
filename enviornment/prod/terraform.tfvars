@@ -7,7 +7,7 @@ rgs = {
 
 storageaccountname = {
     storageaccountname = {
- name                     = "storage_rg-pod_123"
+ name                     = "storagergprod246"
   resource_group_name      = "rg-pod"
   location                 = "centralindia"
   account_tier             = "Standard"

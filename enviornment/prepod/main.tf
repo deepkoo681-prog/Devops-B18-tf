@@ -1,12 +1,13 @@
 
 module "resource_group" {
-    source = "../../modules/azurerm_resource_group"
-    rgs = var.rgs
-  
+  source = "../../modules/azurerm_resource_group"
+  rgs    = var.rgs
+
 }
 
 module "storage_account" {
-    source = "../../modules/azurerm_storage_account"
-    storageaccountname = var.storageaccountname
-  
+  depends_on = [module.resource_group]
+  source             = "../../modules/azurerm_storage_account"
+  storageaccountname = var.storageaccountname
+
 }
