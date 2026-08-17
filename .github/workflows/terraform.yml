@@ -3,8 +3,7 @@ name: Terraform CI/CD
 on:
   push:
     branches:
-      - feature
-      - main
+      - '**'
   pull_request:
     branches:
       - main
@@ -17,7 +16,7 @@ jobs:
 
   terraform-plan:
     name: Terraform Plan
-    if: github.ref == 'refs/heads/feature' || github.event_name == 'pull_request'
+    if: github.ref != 'refs/heads/main'
     runs-on: ubuntu-latest
 
     steps:
